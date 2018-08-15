@@ -10,7 +10,6 @@ namespace SowAndReap.Data
         public int PlantID { get; set; }
         public int MaterialID { get; set; }
 
-        [ForeignKey] //this should be here I assume?
         public virtual Plant Plant { get; set; }
         public virtual Material Material { get; set; }
     }

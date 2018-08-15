@@ -53,10 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Crop.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Material.cs" />
+    <Compile Include="Migrations\201808151727391_InitialCreate.cs" />
+    <Compile Include="Migrations\201808151727391_InitialCreate.Designer.cs">
+      <DependentUpon>201808151727391_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808151730555_initial.cs" />
+    <Compile Include="Migrations\201808151730555_initial.Designer.cs">
+      <DependentUpon>201808151730555_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808151827410_addedControllers.cs" />
+    <Compile Include="Migrations\201808151827410_addedControllers.Designer.cs">
+      <DependentUpon>201808151827410_addedControllers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808151907201_addedPlantCreate.cs" />
+    <Compile Include="Migrations\201808151907201_addedPlantCreate.Designer.cs">
+      <DependentUpon>201808151907201_addedPlantCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,14 +81,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SowAndReap.Models\SowAndReap.Models.csproj">
-      <Project>{1cf45eb1-1fd9-4af0-a660-e88947cf1e5e}</Project>
-      <Name>SowAndReap.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SowAndReap.Services\SowAndReap.Services.csproj">
-      <Project>{c05cd52e-c5e9-4be7-b7ee-000b2c568e2b}</Project>
-      <Name>SowAndReap.Services</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201808151727391_InitialCreate.resx">
+      <DependentUpon>201808151727391_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808151730555_initial.resx">
+      <DependentUpon>201808151730555_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808151827410_addedControllers.resx">
+      <DependentUpon>201808151827410_addedControllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808151907201_addedPlantCreate.resx">
+      <DependentUpon>201808151907201_addedPlantCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

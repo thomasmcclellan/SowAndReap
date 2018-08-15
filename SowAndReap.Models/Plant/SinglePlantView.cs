@@ -11,7 +11,7 @@ namespace SowAndReap.Models
     {
         public int PlantID { get; set; }
         public string PlantName { get; set; }
-        public PlantHealth WillLive { get; set; }
+        public PlantHealth PlantRanking { get; set; }
 
         public override string ToString()
         {

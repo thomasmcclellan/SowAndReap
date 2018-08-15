@@ -53,8 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Plant\PlantCreate.cs" />
     <Compile Include="SingleMaterialItem.cs" />
-    <Compile Include="SinglePlantView.cs" />
+    <Compile Include="Plant\SinglePlantView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

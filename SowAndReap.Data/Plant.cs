@@ -12,6 +12,8 @@ namespace SowAndReap.Data
         [Key]
         public int PlantID { get; set; }
 
+        public Guid OwnerID { get; set; }
+
         [Required]
         public string PlantName { get; set; }
 
@@ -29,22 +31,40 @@ namespace SowAndReap.Data
 
         [Required]
         public DateTime ReapEndDate { get; set; }
-        public int SpaceNeeds { get; set; }
-        public int WaterNeeds { get; set; }
-        public string SoilNeeds { get; set; }
-        public string SolarNeeds { get; set; }
 
-        public PlantHealth WillLive { get; set; }
+        public int SpaceNeeds { get; set; }
+        public waterNeeds WaterNeeds { get; set; }
+        public soilNeeds SoilNeeds { get; set; }
+        public solarNeeds SolarNeeds { get; set; }
+
+        public PlantHealth PlantRanking { get; set; }
 
         [MaxLength(150, ErrorMessage = "Comment exceeded character length.")]
         public string Comments { get; set; }
     }
 
+
+
+
+    public enum waterNeeds { Daily, EveryOtherDay, ThriceWeekly, TwiceWeekly, Weekly }
+    public enum soilNeeds { LimeAndSulfur, SoilConditioner, SoilCompost, PeatMoss, Perlite, Gypsum }
+    public enum solarNeeds { Direct, MorningOnly, HalfDay, Shade }
+
+
+
     public class PlantHealth
     {
         public bool WillLive { get; set; }
-        public string LeafColor { get; set; }
-        public string StalkStrenth { get; set; }
+        public plantRanking PlantRanking { get; set; }
+        public leafColor LeafColor { get; set; }
+        public stalkStrenth StalkStrenth { get; set; }
         public bool BearingFruit { get; set; }
     }
+
+
+
+
+    public enum plantRanking { VeryHealthy, Healthy, ModeratelyHealthy, Moderate, ModeratelyPoor, Poor, VeryPoor, Dead }
+    public enum leafColor { DarkGreen, MediumGreen, LightGreen, Yellow, Orange, Brown }
+    public enum stalkStrenth { Strong, Moderate, Weak }
 }

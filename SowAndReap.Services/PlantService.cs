@@ -1,17 +1,14 @@
 ﻿using SowAndReap.Data;
 using SowAndReap.Models;
-using SowAndReap.WebMVC.Models.Plant;
+using SowAndReap.Models.Plant;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SowAndReap.Services
 {
     public class PlantService
     {
-
         private readonly Guid _userId;
 
         public PlantService(Guid userId)
@@ -26,7 +23,8 @@ namespace SowAndReap.Services
                 {
                     OwnerID = _userId,
                     PlantName = model.PlantName,
-                    PlantZone = model.PlantZone,
+                    //PlantZone = model.PlantZone,
+                    //Season = model.Season,
                     SowStartDate = model.SowStartDate,
                     SowEndDate = model.SowEndDate,
                     ReapStartDate = model.ReapStartDate,
@@ -61,7 +59,8 @@ namespace SowAndReap.Services
                                 {
                                     PlantID = e.PlantID,
                                     PlantName = e.PlantName,
-                                    PlantRanking = e.PlantRanking
+                                    //Season = e.Season,
+                                    //PlantRanking = e.PlantRanking
                                 }
                         );
 

@@ -3,7 +3,7 @@ namespace SowAndReap.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class anotherAttempt : DbMigration
     {
         public override void Up()
         {
@@ -38,16 +38,13 @@ namespace SowAndReap.Data.Migrations
                 c => new
                     {
                         PlantID = c.Int(nullable: false, identity: true),
+                        OwnerID = c.Guid(nullable: false),
                         PlantName = c.String(nullable: false),
                         SowStartDate = c.DateTime(nullable: false),
                         SowEndDate = c.DateTime(nullable: false),
                         ReapStartDate = c.DateTime(nullable: false),
                         ReapEndDate = c.DateTime(nullable: false),
                         SpaceNeeds = c.Int(nullable: false),
-                        WaterNeeds = c.Int(nullable: false),
-                        SoilNeeds = c.String(),
-                        SolarNeeds = c.String(),
-                        Comments = c.String(maxLength: 150),
                     })
                 .PrimaryKey(t => t.PlantID);
             

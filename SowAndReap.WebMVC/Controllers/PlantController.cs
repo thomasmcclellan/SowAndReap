@@ -1,9 +1,7 @@
-﻿using SowAndReap.Models;
-using SowAndReap.WebMVC.Models.Plant;
+﻿using Microsoft.AspNet.Identity;
+using SowAndReap.Models.Plant;
+using SowAndReap.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SowAndReap.WebMVC.Controllers
@@ -14,7 +12,12 @@ namespace SowAndReap.WebMVC.Controllers
         // GET: Plant
         public ActionResult Index()
         {
-            var model = new SinglePlantView[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PlantService(userId);
+            var model = service.GetPlants();
+
+            //var model = new SinglePlantView[0];
+
             return View(model);
         }
 
@@ -25,11 +28,17 @@ namespace SowAndReap.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Create(PlantCreate model)
         {
-            if (ModelState.IsValid) { }
+            if (!ModelState.IsValid) return View(model);
 
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PlantService(userId);
+
+            service.CreatePlant(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

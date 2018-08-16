@@ -7,13 +7,13 @@ namespace SowAndReap.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class initial : IMigrationMetadata
+    public sealed partial class anotherAttempt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(anotherAttempt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808151730555_initial"; }
+            get { return "201808161509030_anotherAttempt"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,7 +10,6 @@ namespace SowAndReap.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SowAndReap.Data.ApplicationDbContext";
         }
 
         protected override void Seed(SowAndReap.Data.ApplicationDbContext context)
